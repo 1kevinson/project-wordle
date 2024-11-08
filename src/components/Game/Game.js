@@ -7,7 +7,7 @@ import Guesses from "../Guesses";
 
 // Pick a random word on every page load.
 const answer = sample(WORDS);
-console.info({ answer });
+console.info( answer );
 
 function Game() {
 
@@ -16,7 +16,7 @@ function Game() {
 
   return (
      <React.Fragment>
-       <Guesses guesses={guesses} />
+       <Guesses guesses={guesses} answer={answer} />
        <WordInput
           guesses={guesses}
           setGuesses={setGuesses}
