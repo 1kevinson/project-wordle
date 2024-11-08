@@ -1,23 +1,21 @@
-/**
- * Thanks to GitHub user dylano for supplying a more-accurate
- * solving algorithm!
- */
-
 export function checkGuess(guess, answer) {
     const guessLetters = guess.toUpperCase().split('');
     const answerLetters = answer.toUpperCase().split('');
     const results = [];
 
+    const guessStatus = (index, status) => {
+        return {letter: guessLetters[index], status: status};
+    }
+
     for (let index = 0; index < answerLetters.length; index++) {
-        if(!answerLetters.includes(guessLetters[index])) {
-            results.push({letter: guessLetters[index], status: 'incorrect'});
+        if (!answerLetters.includes(guessLetters[index])) {
+            results.push(guessStatus(index, 'incorrect'));
             continue;
         }
 
-        results.push(
-            guessLetters[index] === answerLetters[index] ?
-                {letter: guessLetters[index], status: 'correct'} :
-                {letter: guessLetters[index], status: 'misplaced'}
+        results.push(guessLetters[index] === answerLetters[index]
+            ? guessStatus(index, 'correct')
+            : guessStatus(index, 'misplaced')
         )
     }
 
