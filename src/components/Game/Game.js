@@ -2,7 +2,7 @@ import React from 'react';
 
 import {sample} from '../../utils';
 import {WORDS} from '../../data';
-import WordInput from "../WordInput";
+import GuessInput from "../GuessInput";
 import Guesses from "../Guesses";
 
 // Pick a random word on every page load.
@@ -20,7 +20,7 @@ function Game() {
                      answer={answer}
                      wordGuess={wordGuess}
             />
-            <WordInput
+            <GuessInput
                 guesses={guesses}
                 setGuesses={setGuesses}
                 wordGuess={wordGuess}

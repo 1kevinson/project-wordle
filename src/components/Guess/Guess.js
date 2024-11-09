@@ -5,15 +5,22 @@ import {checkGuess} from "../../game-helpers";
 
 function Guess({guessWord, answer}) {
 
-    const results = guessWord !== undefined && checkGuess(guessWord, answer);
+    const results = guessWord && checkGuess(guessWord, answer);
 
     return <p className="guess">
-        {range(0, NUM_OF_WORD_LENGTH).map((number, index) => (
-            <span className={`cell ${guessWord !== undefined && results[index].status}`} key={index}>
-                {guessWord !== undefined && guessWord.split('')[index]}
-            </span>
+        {range(NUM_OF_WORD_LENGTH).map((number) => (
+            <Cell key={number}
+                  letter={results && results[number].letter}
+                  status={results && results[number].status}
+            />
         ))}
     </p>;
+}
+
+function Cell({letter, status}) {
+    return (
+        <span className={`cell ${status}`}>{letter}</span>
+    )
 }
 
 export default Guess;

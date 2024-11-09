@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WordInput(props) {
+function GuessInput(props) {
 
     function proposeWordGuess(event) {
         event.preventDefault();
@@ -16,9 +16,9 @@ function WordInput(props) {
             <label htmlFor="guess-input">Enter guess:</label>
             <input id="guess-input"
                    type="text"
-                   pattern=".{5}"
+                   pattern="[a-zA-Z]{5}"
                    maxLength={5}
-                   title="Please enter exactly 5 non-space characters."
+                   title="Please enter exactly 5 text characters."
                    value={props.wordGuess}
                    onChange={event => {
                        props.setWordGuess(event.target.value.toUpperCase());
@@ -29,4 +29,4 @@ function WordInput(props) {
     )
 }
 
-export default WordInput;
+export default GuessInput;
