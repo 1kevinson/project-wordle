@@ -19,7 +19,6 @@ function Game() {
 
     return (
         <React.Fragment>
-            {gameStatus}
             <Guesses guesses={guesses}
                      answer={answer}
                      wordGuess={wordGuess}

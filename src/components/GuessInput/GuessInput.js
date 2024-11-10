@@ -17,7 +17,8 @@ function GuessInput(props) {
             props.setGameStatus('won');
         }
 
-        if (nextGuesses.length >= NUM_OF_GUESSES_ALLOWED) {
+        if (nextGuesses.length >= NUM_OF_GUESSES_ALLOWED &&
+            props.wordGuess.toUpperCase() !== props.answer) {
             props.setGameStatus('lost')
         }
     }
