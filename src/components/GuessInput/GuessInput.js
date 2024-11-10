@@ -1,13 +1,25 @@
 import React from 'react';
+import {NUM_OF_GUESSES_ALLOWED} from "../../constants";
 
 function GuessInput(props) {
 
     function proposeWordGuess(event) {
         event.preventDefault();
 
-        const proposedWords = [...props.guesses, props.wordGuess];
-        event.target.checkValidity() && props.setGuesses(proposedWords);
+        const nextGuesses = [...props.guesses, props.wordGuess];
+        props.setGuesses(nextGuesses);
+        updateGameStatus(nextGuesses);
         props.setWordGuess('');
+    }
+
+    function updateGameStatus(nextGuesses) {
+        if (props.wordGuess.toUpperCase() === props.answer) {
+            props.setGameStatus('win');
+        }
+
+        if (nextGuesses.length >= NUM_OF_GUESSES_ALLOWED) {
+            props.setGameStatus('lost')
+        }
     }
 
     return (
@@ -15,6 +27,7 @@ function GuessInput(props) {
               onSubmit={proposeWordGuess}>
             <label htmlFor="guess-input">Enter guess:</label>
             <input id="guess-input"
+                   disabled={props.gameStatus !== 'running'}
                    type="text"
                    pattern="[a-zA-Z]{5}"
                    maxLength={5}

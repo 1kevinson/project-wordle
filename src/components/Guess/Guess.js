@@ -18,8 +18,9 @@ function Guess({guessWord, answer}) {
 }
 
 function Cell({letter, status}) {
+    const className = status ? `cell ${status}` : 'cell';
     return (
-        <span className={`cell ${status}`}>{letter}</span>
+        <span className={className}>{letter}</span>
     )
 }
 
