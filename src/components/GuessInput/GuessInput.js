@@ -14,7 +14,7 @@ function GuessInput(props) {
 
     function updateGameStatus(nextGuesses) {
         if (props.wordGuess.toUpperCase() === props.answer) {
-            props.setGameStatus('win');
+            props.setGameStatus('won');
         }
 
         if (nextGuesses.length >= NUM_OF_GUESSES_ALLOWED) {
