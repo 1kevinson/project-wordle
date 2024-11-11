@@ -1,4 +1,5 @@
 export function checkGuess(guess, answer) {
+
     const guessLetters = guess.toUpperCase().split('');
     const answerLetters = answer.toUpperCase().split('');
     const results = [];

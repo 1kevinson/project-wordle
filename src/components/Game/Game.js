@@ -1,13 +1,16 @@
 import React from 'react';
 
-import {sample} from '../../utils';
+import {range, sample} from '../../utils';
 import {WORDS} from '../../data';
+import {ALPHABET} from '../../data-keyboard';
 import GuessInput from "../GuessInput";
 import Guesses from "../Guesses";
 import WonBanner from "../WonBanner";
 import LostBanner from "../LostBanner";
+import KeyLine from "../KeyLine";
 
-// Pick a random word on every page load.
+const keyboardLayers = [10, 9, 7];
+const keyCaps = ALPHABET;
 const answer = sample(WORDS);
 console.info(answer);
 
@@ -32,6 +35,15 @@ function Game() {
                 gameStatus={gameStatus}
                 setGameStatus={setGameStatus}
             />
+            {range(3).map((number) => (
+                <KeyLine
+                    className='keyLine'
+                    key={number}
+                    keyboardLine={number + 1}
+                    numOfKeycaps={keyboardLayers[number]}
+                    keyCaps={keyCaps}
+                />
+            ))}
             {gameStatus === 'won' && <WonBanner numberOfGuesses={guesses.length}/>}
             {gameStatus === 'lost' && <LostBanner answer={answer}/>}
         </React.Fragment>
