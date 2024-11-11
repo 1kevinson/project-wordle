@@ -2,17 +2,6 @@ import React from 'react';
 import KeyCap from "../KeyCap";
 import {range} from "../../utils";
 
-function getKeyCaps(keyboardLine, keyCaps) {
-    switch (keyboardLine) {
-        case 1:
-            return keyCaps.slice(0, 10);
-        case 2:
-            return keyCaps.slice(10, 19);
-        default:
-            return keyCaps.slice(19, 26);
-    }
-}
-
 function KeyLine(props) {
     const keyCaps = getKeyCaps(props.keyboardLine, props.keyCaps)
 
@@ -28,6 +17,17 @@ function KeyLine(props) {
             })}
         </div>
     );
+}
+
+function getKeyCaps(keyboardLine, keyCaps) {
+    switch (keyboardLine) {
+        case 1:
+            return keyCaps.slice(0, 10);
+        case 2:
+            return keyCaps.slice(10, 19);
+        default:
+            return keyCaps.slice(19, 26);
+    }
 }
 
 export default KeyLine;

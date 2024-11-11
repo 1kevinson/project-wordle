@@ -1,12 +1,20 @@
 import React from 'react';
 import {NUM_OF_GUESSES_ALLOWED} from "../../constants";
+import {checkGuess} from "../../game-helpers";
 
 function GuessInput(props) {
+
+    const [resultData, setResultData] = React.useState([]);
+
+    const resultGuess = props.wordGuess && checkGuess(props.wordGuess, props.answer);
 
     function proposeWordGuess(event) {
         event.preventDefault();
 
         const nextGuesses = [...props.guesses, props.wordGuess];
+        const nextResultData = [...resultData, ...resultGuess];
+
+        setResultData(nextResultData);
         props.setGuesses(nextGuesses);
         updateGameStatus(nextGuesses);
         props.setWordGuess('');
