@@ -4,17 +4,15 @@ import {checkGuess} from "../../game-helpers";
 
 function GuessInput(props) {
 
-    const [resultData, setResultData] = React.useState([]);
-
     const resultGuess = props.wordGuess && checkGuess(props.wordGuess, props.answer);
 
     function proposeWordGuess(event) {
         event.preventDefault();
 
         const nextGuesses = [...props.guesses, props.wordGuess];
-        const nextResultData = [...resultData, ...resultGuess];
+        const nextResultData = [...props.resultData, ...resultGuess];
 
-        setResultData(nextResultData);
+        props.setResultData(nextResultData);
         props.setGuesses(nextGuesses);
         updateGameStatus(nextGuesses);
         props.setWordGuess('');
