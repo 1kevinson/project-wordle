@@ -8,11 +8,15 @@ import Guesses from "../Guesses";
 import WonBanner from "../WonBanner";
 import LostBanner from "../LostBanner";
 import KeyLine from "../KeyLine";
+import "driver.js/dist/driver.css"
+import { gameDescription } from "../../game-helpers";
 
 const keyboardLayers = [10, 9, 7];
 const keyCaps = ALPHABET;
 const answer = sample(WORDS);
 console.info(answer);
+
+gameDescription()
 
 function Game() {
 
