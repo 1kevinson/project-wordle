@@ -13,17 +13,14 @@ import { gameDescription } from "../../game-helpers";
 
 const keyboardLayers = [10, 9, 7];
 const keyCaps = ALPHABET;
-const answer = sample(WORDS);
-console.info(answer);
 
-gameDescription()
+function Game({ gameStatus, setGameStatus, guesses,
+                setGuesses, resultData, setResultData,
+                wordGuess, setWordGuess, answer }) {
 
-function Game() {
-
-  const [gameStatus, setGameStatus] = React.useState('running');
-  const [wordGuess, setWordGuess] = React.useState('');
-  const [guesses, setGuesses] = React.useState([]);
-  const [resultData, setResultData] = React.useState([]);
+  React.useEffect(() => {
+    gameDescription();
+  }, [])
 
   return (
      <React.Fragment>
