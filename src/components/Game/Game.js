@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { range, sample } from '../../utils';
-import { WORDS } from '../../data';
+import { range } from '../../utils';
 import { ALPHABET } from '../../data-keyboard';
 import GuessInput from "../GuessInput";
 import Guesses from "../Guesses";
