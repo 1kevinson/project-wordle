@@ -51,7 +51,7 @@ header {
     border-bottom: 1px solid var(--color-gray-900);
     color: var(--color-gray-300);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 2rem;
     align-items: center;
 }
@@ -71,7 +71,7 @@ h1 {
     &.title {
         display: flex;
         justify-content: flex-end;
-        margin-right: -5rem;
+        /* margin-right: -5rem; */
     }
 }
 
@@ -299,9 +299,68 @@ h1 {
 }
 
 .restart-game {
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
 
     & :hover {
         cursor: pointer;
     }
+}
+
+/* MEDIA QUERIES */
+/* Base styles - Apply to all devices by default */
+
+/* Tiny Phone */
+@media only screen and (max-width: 320px) {
+    body {
+        /* Tiny phone specific styles go here */
+    }
+    /* Additional tiny phone styles */
+    /* Example */
+    /* .container { padding: 10px; } */
+}
+
+/* Normal Phone */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: var(--header-height);
+        border-bottom: 2px solid var(--color-gray-900);
+        color: var(--color-gray-300);
+        grid-column-gap: 1rem;
+        align-items: center;
+        justify-items: center;
+    }
+
+    h1 {
+        flex: 1;
+        font-size: 2.75rem;
+        line-height: var(--header-height);
+        text-align: center;
+    }
+
+    .restart-game {
+       font-size: 5rem;
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        /* Laptop specific styles go here */
+    }
+    /* Additional laptop styles */
+    /* Example */
+    /* .container { padding: 20px; } */
+}
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+    body {
+        /* Desktop specific styles go here */
+    }
+    /* Additional desktop styles */
+    /* Example */
+    /* .container { padding: 25px; } */
 }

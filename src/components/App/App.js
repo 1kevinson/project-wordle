@@ -14,6 +14,8 @@ function App() {
     return sample(WORDS);
   });
 
+  console.info(answer)
+
   return (
      <div className="wrapper">
        <Header
