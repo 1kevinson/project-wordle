@@ -17,7 +17,7 @@ function Header(props) {
     <RotateCcw
        strokeWidth={2.5}
        color="grey"
-       size={47.5}
+       size={40}
        onClick={() => resetGame()}
     />
   </span>
