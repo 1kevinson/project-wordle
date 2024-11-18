@@ -14,8 +14,6 @@ function App() {
     return sample(WORDS);
   });
 
-  console.info(answer)
-
   return (
      <div className="wrapper">
        <Header
@@ -44,6 +42,9 @@ function App() {
               answer={answer}
            />
          </StrictMode>
+         <div className="signature">
+           <span>Made with ♥️ by <a href="https://www.linkedin.com/in/kevin-kouomeu/" target='_blank'>Kevin Kouomeu</a></span>
+         </div>
        </div>
      </div>
   );

@@ -313,9 +313,14 @@ h1 {
 }
 
 .restart-game {
-     margin-left: 5rem;
+    margin-left: 5rem;
 
     & :hover {
         cursor: pointer;
     }
+}
+
+.signature {
+    display: flex;
+    justify-content: center;
 }
