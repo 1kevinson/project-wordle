@@ -76,8 +76,22 @@ h1 {
 }
 
 @media (max-width: 25rem) {
-    h1 {
-        font-size: 1.25rem;
+    .banner {
+        height: 20%;
+    }
+}
+
+/* Tiny Phone */
+@media only screen and (max-width: 320px) {
+    .banner {
+        height: 20%;
+    }
+}
+
+/* Normal Phone */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    .banner {
+        height: 20%;
     }
 }
 
