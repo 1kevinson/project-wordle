@@ -1,7 +1,6 @@
 import React from 'react';
 import KeyCap from "../KeyCap";
 import { range } from "../../utils";
-import keyCap from "../KeyCap";
 
 function KeyLine(props) {
   const keyCaps = getKeyCaps(props.keyboardLine, props.keyCaps)
